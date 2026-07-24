@@ -1,0 +1,218 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 900 280"
+  width="900"
+  height="280"
+  role="img"
+  aria-label="Anvesh Annepaga — AI Systems Engineer"
+>
+  <title>Anvesh Annepaga — AI Systems Engineer</title>
+  <desc>Animated hero banner: dark background with subtle node network, glowing accent lines, and name/role typography.</desc>
+
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#050816" />
+      <stop offset="60%"  stop-color="#0A0F24" />
+      <stop offset="100%" stop-color="#050816" />
+    </linearGradient>
+
+    <!-- Cyan glow filter for accent lines -->
+    <filter id="cyan-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow for nodes -->
+    <filter id="node-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Text gradient: cyan → blue -->
+    <linearGradient id="name-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#00E5FF" />
+      <stop offset="60%"  stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+
+    <!-- Clip to SVG bounds -->
+    <clipPath id="bounds">
+      <rect width="900" height="280" />
+    </clipPath>
+
+    <!-- Fade mask for subtle vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%"   stop-color="#0F172A" stop-opacity="0" />
+      <stop offset="100%" stop-color="#050816" stop-opacity="0.7" />
+    </radialGradient>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="900" height="280" fill="url(#bg-grad)" />
+
+  <!-- ── Grid lines (very subtle) ── -->
+  <g clip-path="url(#bounds)" opacity="0.04" stroke="#00E5FF" stroke-width="0.5">
+    <!-- Vertical lines every 60px -->
+    <line x1="60"  y1="0" x2="60"  y2="280" />
+    <line x1="120" y1="0" x2="120" y2="280" />
+    <line x1="180" y1="0" x2="180" y2="280" />
+    <line x1="240" y1="0" x2="240" y2="280" />
+    <line x1="300" y1="0" x2="300" y2="280" />
+    <line x1="360" y1="0" x2="360" y2="280" />
+    <line x1="420" y1="0" x2="420" y2="280" />
+    <line x1="480" y1="0" x2="480" y2="280" />
+    <line x1="540" y1="0" x2="540" y2="280" />
+    <line x1="600" y1="0" x2="600" y2="280" />
+    <line x1="660" y1="0" x2="660" y2="280" />
+    <line x1="720" y1="0" x2="720" y2="280" />
+    <line x1="780" y1="0" x2="780" y2="280" />
+    <line x1="840" y1="0" x2="840" y2="280" />
+    <!-- Horizontal lines every 40px -->
+    <line x1="0" y1="40"  x2="900" y2="40"  />
+    <line x1="0" y1="80"  x2="900" y2="80"  />
+    <line x1="0" y1="120" x2="900" y2="120" />
+    <line x1="0" y1="160" x2="900" y2="160" />
+    <line x1="0" y1="200" x2="900" y2="200" />
+    <line x1="0" y1="240" x2="900" y2="240" />
+  </g>
+
+  <!-- ── Network edges (right-side constellation) ── -->
+  <g clip-path="url(#bounds)" filter="url(#cyan-glow)">
+    <!-- Edge: node A (700,60) → node B (760,130) -->
+    <line x1="700" y1="60" x2="760" y2="130" stroke="#00E5FF" stroke-width="0.8" opacity="0">
+      <animate attributeName="opacity" values="0;0.35;0.18;0.35;0" dur="6s" begin="0.5s" repeatCount="indefinite" />
+    </line>
+    <!-- Edge: node B (760,130) → node C (820,80) -->
+    <line x1="760" y1="130" x2="820" y2="80" stroke="#3B82F6" stroke-width="0.8" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0.12;0.3;0" dur="7s" begin="1s" repeatCount="indefinite" />
+    </line>
+    <!-- Edge: node C (820,80) → node D (870,180) -->
+    <line x1="820" y1="80" x2="870" y2="180" stroke="#7C3AED" stroke-width="0.8" opacity="0">
+      <animate attributeName="opacity" values="0;0.25;0.1;0.25;0" dur="8s" begin="2s" repeatCount="indefinite" />
+    </line>
+    <!-- Edge: node A (700,60) → node E (650,160) -->
+    <line x1="700" y1="60" x2="650" y2="160" stroke="#00E5FF" stroke-width="0.8" opacity="0">
+      <animate attributeName="opacity" values="0;0.28;0.1;0.28;0" dur="9s" begin="0s" repeatCount="indefinite" />
+    </line>
+    <!-- Edge: node E (650,160) → node B (760,130) -->
+    <line x1="650" y1="160" x2="760" y2="130" stroke="#3B82F6" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.22;0.08;0.22;0" dur="6.5s" begin="1.5s" repeatCount="indefinite" />
+    </line>
+    <!-- Edge: node E (650,160) → node F (700,230) -->
+    <line x1="650" y1="160" x2="700" y2="230" stroke="#00E5FF" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.2;0.07;0.2;0" dur="7.5s" begin="3s" repeatCount="indefinite" />
+    </line>
+    <!-- Edge: node D (870,180) → node F (700,230) — long diagonal -->
+    <line x1="870" y1="180" x2="700" y2="230" stroke="#7C3AED" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.18;0.06;0.18;0" dur="10s" begin="0.8s" repeatCount="indefinite" />
+    </line>
+    <!-- Extra node: G (780,220) -->
+    <line x1="760" y1="130" x2="780" y2="220" stroke="#3B82F6" stroke-width="0.6" opacity="0">
+      <animate attributeName="opacity" values="0;0.24;0.08;0.24;0" dur="8.5s" begin="2.5s" repeatCount="indefinite" />
+    </line>
+    <line x1="820" y1="80" x2="780" y2="220" stroke="#00E5FF" stroke-width="0.5" opacity="0">
+      <animate attributeName="opacity" values="0;0.15;0.05;0.15;0" dur="11s" begin="1.2s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- ── Network nodes ── -->
+  <g clip-path="url(#bounds)" filter="url(#node-glow)">
+    <!-- Node A -->
+    <circle cx="700" cy="60" r="3" fill="#00E5FF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" begin="0s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4;3" dur="4s" begin="0s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node B -->
+    <circle cx="760" cy="130" r="4" fill="#3B82F6" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" begin="1s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4;5.5;4" dur="5s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node C -->
+    <circle cx="820" cy="80" r="2.5" fill="#00E5FF" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="6s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node D -->
+    <circle cx="870" cy="180" r="3" fill="#7C3AED" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="7s" begin="2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node E -->
+    <circle cx="650" cy="160" r="3.5" fill="#3B82F6" opacity="0.55">
+      <animate attributeName="opacity" values="0.55;0.9;0.55" dur="5.5s" begin="0.3s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node F -->
+    <circle cx="700" cy="230" r="2" fill="#00E5FF" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="8s" begin="1.8s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node G -->
+    <circle cx="780" cy="220" r="2.5" fill="#7C3AED" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.85;0.5" dur="6.5s" begin="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- ── Horizontal accent line ── -->
+  <g clip-path="url(#bounds)" filter="url(#cyan-glow)">
+    <line x1="60" y1="200" x2="0" y2="200" stroke="#00E5FF" stroke-width="1" opacity="0" />
+    <line x1="60" y1="200" x2="600" y2="200" stroke="#00E5FF" stroke-width="0.6" opacity="0.18">
+      <animate attributeName="x2" values="60;600;600" dur="1.8s" begin="0.6s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </line>
+  </g>
+
+  <!-- ── Vignette overlay ── -->
+  <rect width="900" height="280" fill="url(#vignette)" />
+
+  <!-- ── Typography ── -->
+
+  <!-- Role label — JetBrains Mono feel via monospace fallback -->
+  <text
+    x="60" y="102"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="11"
+    fill="#00E5FF"
+    letter-spacing="3"
+    opacity="0"
+  >
+    AI SYSTEMS ENGINEER  ·  MULTI-AGENT AI
+    <animate attributeName="opacity" values="0;0.75" dur="0.8s" begin="0.2s" fill="freeze" />
+  </text>
+
+  <!-- Name — large, gradient fill via linearGradient -->
+  <text
+    x="60" y="158"
+    font-family="'Space Grotesk', 'Segoe UI', Arial, sans-serif"
+    font-size="52"
+    font-weight="700"
+    fill="url(#name-grad)"
+    letter-spacing="-1"
+    opacity="0"
+  >
+    Anvesh Annepaga
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="0.5s" fill="freeze" />
+  </text>
+
+  <!-- Tagline — muted body text -->
+  <text
+    x="60" y="188"
+    font-family="'Inter', 'Segoe UI', Arial, sans-serif"
+    font-size="14"
+    fill="#94A3B8"
+    letter-spacing="0.2"
+    opacity="0"
+  >
+    FastAPI · LangGraph · LangChain · HuggingFace · AWS · PostgreSQL
+    <animate attributeName="opacity" values="0;0.85" dur="1s" begin="0.9s" fill="freeze" />
+  </text>
+
+  <!-- ── Left accent: vertical bar ── -->
+  <rect x="60" y="200" width="2" height="0" fill="#00E5FF" opacity="0.6" rx="1">
+    <animate attributeName="height" values="0;40" dur="0.6s" begin="1.4s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+  </rect>
+
+</svg>

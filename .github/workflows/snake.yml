@@ -1,0 +1,66 @@
+# ┌─────────────────────────────────────────────────────────────────────────┐
+# │  snake.yml — GitHub Contribution Grid Snake Animation                   │
+# │                                                                         │
+# │  ⚠️  SETUP REQUIRED BEFORE THIS WORKS:                                  │
+# │                                                                         │
+# │  1. This repo must be your *profile* repo:                              │
+# │     Repo name must exactly match your GitHub username → AnveshAnnepaga  │
+# │                                                                         │
+# │  2. Enable write permissions for Actions:                               │
+# │     Settings → Actions → General → Workflow permissions                 │
+# │     → Select "Read and write permissions"  → Save                       │
+# │                                                                         │
+# │  3. Trigger the first run manually:                                     │
+# │     Actions tab → "Generate Snake" → Run workflow (top-right dropdown)  │
+# │                                                                         │
+# │  4. After a successful run, the SVGs land on the `output` branch.       │
+# │     The README.md already references the correct URLs for both dark      │
+# │     and light variants.                                                 │
+# │                                                                         │
+# │  Subsequent runs are automatic on a daily cron schedule.                │
+# └─────────────────────────────────────────────────────────────────────────┘
+
+name: Generate Snake
+
+on:
+  # Runs every day at 06:00 UTC
+  schedule:
+    - cron: "0 6 * * *"
+
+  # Allows you to trigger this manually from the Actions tab
+  workflow_dispatch:
+
+  # Also runs whenever you push to main (keeps it current after profile edits)
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write   # Required to push the generated SVG to the output branch
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Generate both dark and light snake SVGs ──────────────────────────
+      - name: Generate snake animation (dark + light)
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # ── Push the generated files to the `output` branch ──────────────────
+      - name: Push SVGs to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
